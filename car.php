@@ -1,14 +1,17 @@
 <?php
     class Car{
         
-        public $array = array();
-
-        public function sumavgprice($name,$min,$max){
-            $array = [rand($min,$max),rand($min,$max),rand($min,$max)];
-            $sum = array_sum($array);
-            $avg = round($sum/count($array));
-            $msg = $name."製の車の合計金額は".$sum."万円です。平均金額は".$avg."万円です。";
-            return $msg;
+        public function  speedsystem($passenger){
+            if($passenger <= $this->capacity){
+                for($i=1; $i<= $passenger; $i++){
+                    $this->speed *= 0.95;
+                    $correctspeed = round($this->speed); 
+                }
+            }else{
+                return $msg = "定員オーバーです。";
+            }
+            $name = $this->name;
+            return $msg = $name."製の車の乗車人数が".$passenger."人の時の加速性能は".$correctspeed."km/hです。";
         }
     
     }

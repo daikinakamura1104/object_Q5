@@ -2,19 +2,17 @@
     require("car.php");
 
     class Nissan extends Car{
+        
         public function Nissan(){
 
             $this->name = "Nissan";
-            $this->minprice = 100;
-            $this->maxprice = 149;
+            $this->capacity = 6;
+            $this->speed = 60;
         }
     }
 
     $nissan = new Nissan();
-    $name = $nissan->name;
-    $minprice = $nissan->minprice;
-    $maxprice = $nissan->maxprice;
-
-    echo ($nissan->sumavgprice($name,$minprice,$maxprice));
+    
+    echo ($nissan->speedsystem(5));
 
 ?>
