@@ -3,14 +3,18 @@
 
     class Nissan extends Car{
         public function Nissan(){
+
             $this->name = "Nissan";
-            $this->price = 150;
-            $this->capacity = 6;
-            $this->speed = 60;
+            $this->minprice = 100;
+            $this->maxprice = 149;
         }
     }
 
     $nissan = new Nissan();
-    echo $nissan->accelerator();
-    echo $nissan->brake();
+    $name = $nissan->name;
+    $minprice = $nissan->minprice;
+    $maxprice = $nissan->maxprice;
+
+    echo ($nissan->sumavgprice($name,$minprice,$maxprice));
+
 ?>

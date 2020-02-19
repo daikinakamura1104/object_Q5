@@ -4,15 +4,19 @@
     class Honda extends Car{
         
         public function Honda(){
+            
             $this->name = "Honda";
-            $this->price = 200;
-            $this->capacity = 8;
-            $this->speed = 60;
+            $this->minprice = 150;
+            $this->maxprice = 250;
         }
     }
 
     $honda = new Honda();
-    echo $honda->accelerator();
-    echo $honda->brake();
+    $name = $honda->name;
+    $minprice = $honda->minprice;
+    $maxprice = $honda->maxprice;
+
+    echo ($honda->sumavgprice($name,$minprice,$maxprice));
+
     
 ?>
