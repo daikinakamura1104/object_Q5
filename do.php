@@ -1,29 +1,50 @@
 <?php
-    // require("honda.php");
-    // require("nissan.php");
-    // require("ferrari.php");
+    require("car.php");
+    require("honda.php");
+    require("nissan.php");
+    require("ferrari.php");
+    require("toyota.php");
     
-    // $honda = new Honda();
-    // $h_name = $honda->name;
-    // $h_price = $honda->price;
-    // $h_speed = $honda->speed;
-    // $h_capacity = $honda->capacity;
+    $distance = 1000;
 
-    // $nissan = new Nissan();
-    // $n_name = $nissan->name;
-    // $n_price = $nissan->price;
-    // $n_speed = $nissan->speed;
-    // $n_capacity = $nissan->capacity;
-
-    // $ferrari = new Ferrari();
-    // $f_name = $ferrari->name;
-    // $f_price = $ferrari->price;
-    // $f_speed = $ferrari->speed;
-    // $f_capacity =$ferrari->capacity;
+    $honda = new Honda();
+    $nissan = new Nissan();
+    $ferrari = new Ferrari();
+    $toyota = new Toyota();
 
 
-    // echo $h_name."製の自動車の内容は価格：".$h_price."万円、速度は".$h_speed."km/h、定員数は".$h_capacity."人です。";
-    // echo $n_name."製の自動車の内容は価格：".$n_price."万円、速度は".$n_speed."km/h、定員数は".$n_capacity."人です。";
-    // echo $f_name."製の自動車の内容は価格：".$f_price."万円、速度は".$f_speed."km/h、定員数は".$f_capacity."人です。";
+    $cars = array($honda,$nissan,$ferrari,$toyota);
+    $alltime = array();
+    $correctalltime = array();
+    
+    
+
+    foreach($cars as $value){
+        $speed = $value->speed;
+        $braketime = $value->braketime;
+        var_dump($braketime);
+        $alltime[] += $value->subtraction_braketime($speed,$distance,$braketime);
+    }
+    
+       $correctalltime = array("Honda" => $alltime[0], "Nissan" => $alltime[1],"Ferrari" => $alltime[2],"Toyota" => $alltime[3]);
+
+       asort($correctalltime);
+       $first=(array_slice($correctalltime,0,1));
+       $firstname= key($first);
+       $second=(array_slice($correctalltime,1,1));
+       $secondname= key($second);
+       $third=(array_slice($correctalltime,2,1));
+       $thirdname= key($third);
+       $fourth=(array_slice($correctalltime,3,1));
+       $fourthname = key($fourth);
+        echo "総距離が1000kmのレースを行いました。";
+        echo "第1位は".$firstname."製の車です。";
+        echo "第2位は".$secondname."製の車です。";
+        echo "第3位は".$thirdname."製の車です。";
+        echo "第4位は".$fourthname."製の車です。";
+
+        
+    
+    
 
 ?>

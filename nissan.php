@@ -1,5 +1,4 @@
 <?php
-    require("car.php");
 
     class Nissan extends Car {
         
@@ -7,14 +6,9 @@
 
             $this->name = "Nissan";
             $this->capacity = 6;
-            $this->speed = 70;
+            $this->speed =  60;
+            $this->braketime = rand(1,20);
         }
     }
-
-        $nissan = new Nissan();
-        $name = $nissan->name;
-    
-        echo ($nissan->speedsystem(5,$name));
-
 ?>
 

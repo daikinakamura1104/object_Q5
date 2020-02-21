@@ -1,5 +1,4 @@
 <?php
-    require("car.php");
 
     class Honda extends Car{
         
@@ -8,11 +7,8 @@
             $this->name = "Honda";
             $this->capacity = 6;
             $this->speed = 60;
+            $this->braketime = rand(1,20);
         }
     }
-    $honda = new Honda();
-    $name = $honda->name;
-
-    echo ($honda->speedsystem(5,$name));
     
 ?>
