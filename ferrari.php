@@ -12,6 +12,8 @@
     }
 
     $ferrari = new Ferrari();
-    
-    echo ($ferrari->speedsystem(3));
+    $name = $ferrari->name;
+
+    echo ($ferrari->speedsystem(1,$name));
+   
 ?>

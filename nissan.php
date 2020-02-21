@@ -1,18 +1,20 @@
 <?php
     require("car.php");
 
-    class Nissan extends Car{
+    class Nissan extends Car {
         
         public function Nissan(){
 
             $this->name = "Nissan";
             $this->capacity = 6;
-            $this->speed = 60;
+            $this->speed = 70;
         }
     }
 
-    $nissan = new Nissan();
+        $nissan = new Nissan();
+        $name = $nissan->name;
     
-    echo ($nissan->speedsystem(5));
+        echo ($nissan->speedsystem(5,$name));
 
 ?>
+
