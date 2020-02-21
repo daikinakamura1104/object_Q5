@@ -22,7 +22,6 @@
     foreach($cars as $value){
         $speed = $value->speed;
         $braketime = $value->braketime;
-        var_dump($braketime);
         $alltime[] += $value->subtraction_braketime($speed,$distance,$braketime);
     }
     
