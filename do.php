@@ -22,7 +22,7 @@
     foreach($cars as $value){
         $speed = $value->speed;
         $braketime = $value->braketime;
-        $alltime[] += $value->subtraction_braketime($speed,$distance,$braketime);
+        $alltime[] += $value-> make_correcttime($speed,$distance,$braketime);
     }
     
        $correctalltime = array("Honda" => $alltime[0], "Nissan" => $alltime[1],"Ferrari" => $alltime[2],"Toyota" => $alltime[3]);
