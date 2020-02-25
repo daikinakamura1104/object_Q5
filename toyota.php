@@ -5,11 +5,15 @@
         public function Toyota(){
             
             $this->name = "Toyota";
-            $this->capacity = 2;
             $this->braketime = rand(1,20);
             $price = 110;
+            // case文使う
             if($price != ""){
-                if($price > 100 && $price < 150){
+                if($price < 100 ){
+                    $this->speed = 50;
+                    return $this->speed;
+                }
+                else if($price >= 100 && $price < 150){
                     $this->speed = 60;
                     return $this->speed;
                 }else if($price > 150 && $price < 200){
@@ -27,4 +31,3 @@
     }
    
 ?>
-
