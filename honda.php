@@ -1,14 +1,22 @@
 <?php
+    require("car.php");
 
     class Honda extends Car{
         
         public function Honda(){
-
+            
             $this->name = "Honda";
-            $this->capacity = 6;
-            $this->speed = 60;
-            $this->braketime = rand(1,20);
+            $this->minprice = 150;
+            $this->maxprice = 250;
         }
     }
+
+    $honda = new Honda();
+    $name = $honda->name;
+    $minprice = $honda->minprice;
+    $maxprice = $honda->maxprice;
+
+    echo ($honda->sumavgprice($name,$minprice,$maxprice));
+
     
 ?>

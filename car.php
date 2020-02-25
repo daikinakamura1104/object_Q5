@@ -4,7 +4,7 @@
         public $array = array();
 
         public function sumavgprice($name,$min,$max){
-            $randnum = rand(1,20);
+            $randnum = rand(1,5);
             for($i=1; $i<=$randnum; $i++){
                 $array []= rand($min,$max);
             }
