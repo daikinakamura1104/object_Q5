@@ -1,13 +1,19 @@
 <?php
     class Car{
         
-    public function  make_correcttime($speed,$distance,$braketime){
-        $distance_brake = $braketime * 1;
-        $correctdistance = $distance - $distance_brake;
-        $correcttime = round(($correctdistance / $speed),2);
-        return $correcttime;
-    } 
+        public $array = array();
 
+        public function sumavgprice($name,$min,$max){
+            $randnum = rand(1,20);
+            for($i=1; $i<=$randnum; $i++){
+                $array []= rand($min,$max);
+            }
+            $sum = array_sum($array);
+            $avg = round($sum/count($array));
+            $msg = $name."製の車".$randnum."台の合計金額は".$sum."万円です。平均金額は".$avg."万円です。";
+            return $msg;
+        }
+    
     }
 
 ?>
